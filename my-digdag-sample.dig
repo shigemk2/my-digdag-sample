@@ -1,21 +1,16 @@
 timezone: UTC
 
 _export:
-  hello: "Hello, world!"
+  hello: 'hello world'
+  filename: 'test-mk2'
 
-+step1:
-  sh>: tasks/shell_sample.sh
++load:
+  py>: tasks.MyWorkflow.loadEnv
 
-+step2:
-  _parallel: true
+#+s3_to_td:
 
-  +worker1:
-    sh>: tasks/repeat_hello.sh
-
-  +worker2:
-    sh>: tasks/repeat_hello.sh
-
-+step3:
-  # defined at tasks/__init__.py
-  py>: tasks.MyWorkflow.step3
-
++td_to_s3:
+  td>: queries/select.sql
+  engine: hive
+  database: sample_datasets
+  preview: true
