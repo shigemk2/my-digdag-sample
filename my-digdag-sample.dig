@@ -13,4 +13,4 @@ _export:
   td>: queries/select.sql
   engine: hive
   database: sample_datasets
-  result_url: s3://${AWS_ACCESS_KEY}:${AWS_SECRET_KEY}@/test-log/treasure/${filename}.csv.gz?compression=gz&delimiter=%5Ct
+  result_url: s3://${AWS_ACCESS_KEY}:${AWS_SECRET_KEY}@0.0.0.0:4569/test-log/treasure/${filename}.csv.gz?compression=gz&delimiter=%5Ct
