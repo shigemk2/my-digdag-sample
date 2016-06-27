@@ -4,7 +4,7 @@ _export:
   hello: 'hello world'
   filename: 'test-mk2'
 
-+load:
++init:
   py>: tasks.MyWorkflow.loadEnv
 
 #+s3_to_td:
@@ -13,4 +13,4 @@ _export:
   td>: queries/select.sql
   engine: hive
   database: sample_datasets
-  preview: true
+  result_url: s3://${AWS_ACCESS_KEY}:${AWS_SECRET_KEY}@/test-log/treasure/${filename}.csv.gz?compression=gz&delimiter=%5Ct
